@@ -555,7 +555,7 @@ Once authentication has been completed, choose the quantum computer you wish to 
 :tags: [raises-exception, remove-output]
 
 # Find the backend that is operational and has the shortest job queue
-backend = service.least_busy(filters=operational_backend())
+backend = service.least_busy(simulator=False, operational=True)
 
 print(f'Jobs will run on {backend.name}')
 ```

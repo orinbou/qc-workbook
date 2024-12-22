@@ -581,7 +581,7 @@ slideshow:
 tags: [raises-exception, remove-output]
 ---
 # Find the backend that is operational and has the shortest job queue
-backend = service.least_busy(filters=operational_backend())
+backend = service.least_busy(simulator=False, operational=True)
 sampler = Sampler(backend)
 
 print(f'Jobs will run on {backend.name}')
